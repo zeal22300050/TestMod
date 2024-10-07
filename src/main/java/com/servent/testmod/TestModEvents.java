@@ -12,7 +12,7 @@ public class TestModEvents {
 
     @SubscribeEvent
     public static void creativeTabsBuildEvent(CreativeModeTabEvent.BuildContents event){
-        if(event.getTab() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+        if(event.getTab() == CreativeModeTabs.TOOLS_AND_UTILITIES) { // TOOLS_AND_UTILITIESの部分を変更するとアイテムが表示されるタブが変わる
             event.accept(TestModItems.TEST_BUTTON.get());
         }
     }
