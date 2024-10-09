@@ -1,5 +1,6 @@
 package com.servent.testmod;
 
+import com.servent.testmod.provider.TestBlockStateProvider;
 import com.servent.testmod.provider.TestItemModelProvider;
 import com.servent.testmod.provider.TestItemLangProvider;
 import net.minecraft.data.DataGenerator;
@@ -17,6 +18,7 @@ public class TestMod {
     public TestMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(this::registerProviders);
+        TestModBlocks.register(modEventBus);
         TestModItems.register(modEventBus);
     }
 
@@ -25,6 +27,7 @@ public class TestMod {
         PackOutput packOutput = gen.getPackOutput();
         ExistingFileHelper fileHelper = event.getExistingFileHelper();
         gen.addProvider(event.includeClient(), new TestItemModelProvider(packOutput, fileHelper));
+        gen.addProvider(event.includeClient(), new TestBlockStateProvider(packOutput, fileHelper));
         gen.addProvider(event.includeClient(), new TestItemLangProvider.TestModLangJP(gen.getPackOutput()));
         gen.addProvider(event.includeClient(), new TestItemLangProvider.TestModLangUS(gen.getPackOutput()));
     }
