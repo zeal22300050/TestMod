@@ -19,6 +19,7 @@ public abstract class TestItemLangProvider extends LanguageProvider {
         @Override
         protected void addTranslations() {
             this.add(TestModItems.TEST_BUTTON.get(), "テスト用ボタン");
+            this.add(TestModItems.TEST_BLOCK.get(), "テスト用ブロック");
         }
     }
 
@@ -30,6 +31,7 @@ public abstract class TestItemLangProvider extends LanguageProvider {
         @Override
         protected void addTranslations() {
             this.add(TestModItems.TEST_BUTTON.get(), "this test.");
+            this.add(TestModItems.TEST_BLOCK.get(), "is block.");
         }
     }
 }

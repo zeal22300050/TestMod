@@ -1,3 +1,4 @@
 {
+  "block.testmod.test_block": "テスト用ブロック",
   "item.testmod.test_button": "テスト用ボタン"
 }

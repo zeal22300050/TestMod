@@ -14,6 +14,8 @@ public class TestModEvents {
     public static void creativeTabsBuildEvent(CreativeModeTabEvent.BuildContents event){
         if(event.getTab() == CreativeModeTabs.TOOLS_AND_UTILITIES) { // TOOLS_AND_UTILITIESの部分を変更するとアイテムが表示されるタブが変わる
             event.accept(TestModItems.TEST_BUTTON.get());
+        } else if (event.getTab() == CreativeModeTabs.REDSTONE_BLOCKS) {
+            event.accept(TestModBlocks.TEST_BLOCK.get());
         }
     }
 }

@@ -1,3 +1,4 @@
 {
+  "block.testmod.test_block": "is block.",
   "item.testmod.test_button": "this test."
 }
