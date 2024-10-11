@@ -3,6 +3,7 @@ package com.servent.testmod;
 import com.servent.testmod.provider.TestBlockStateProvider;
 import com.servent.testmod.provider.TestItemModelProvider;
 import com.servent.testmod.provider.TestItemLangProvider;
+import com.servent.testmod.provider.TestRecipeProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -30,5 +31,6 @@ public class TestMod {
         gen.addProvider(event.includeClient(), new TestBlockStateProvider(packOutput, fileHelper));
         gen.addProvider(event.includeClient(), new TestItemLangProvider.TestModLangJP(gen.getPackOutput()));
         gen.addProvider(event.includeClient(), new TestItemLangProvider.TestModLangUS(gen.getPackOutput()));
+        gen.addProvider(event.includeServer(), new TestRecipeProvider(gen.getPackOutput()));
     }
 }
