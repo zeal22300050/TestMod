@@ -1,12 +1,7 @@
 package com.servent.testmod;
 
 // .*とすることで、provider直下のファイルを全てインポートできる
-// import com.servent.testmod.provider.*;
-import com.servent.testmod.provider.TestBlockStateProvider;
-import com.servent.testmod.provider.TestItemModelProvider;
-import com.servent.testmod.provider.TestItemLangProvider;
-import com.servent.testmod.provider.TestRecipeProvider;
-import com.servent.testmod.provider.TestAdvancementProvider;
+import com.servent.testmod.provider.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
