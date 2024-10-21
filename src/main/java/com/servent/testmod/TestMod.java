@@ -31,5 +31,9 @@ public class TestMod {
         gen.addProvider(event.includeClient(), new TestItemLangProvider.TestModLangUS(gen.getPackOutput()));
         gen.addProvider(event.includeServer(), new TestRecipeProvider(gen.getPackOutput()));
         gen.addProvider(event.includeServer(), new TestAdvancementProvider(packOutput, event.getLookupProvider(), fileHelper));
+
+        TestBlockTagsProvider blockTagsProvider = new TestBlockTagsProvider(packOutput, event.getLookupProvider(), fileHelper);
+        gen.addProvider(event.includeServer(), blockTagsProvider);
+        gen.addProvider(event.includeServer(), new TestItemTagsProvider(packOutput, event.getLookupProvider(), blockTagsProvider.contentsGetter(), fileHelper));
     }
 }
