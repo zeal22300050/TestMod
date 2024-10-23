@@ -19,6 +19,7 @@ public class TestMod {
         modEventBus.addListener(this::registerProviders);
         TestModBlocks.register(modEventBus);
         TestModItems.register(modEventBus);
+        TestModSoundEvent.register(modEventBus);
     }
 
     private void registerProviders(GatherDataEvent event) {
