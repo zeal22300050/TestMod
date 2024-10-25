@@ -2,7 +2,6 @@ package com.servent.testmod;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
-import com.servent.testmod.TestSoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -16,7 +15,7 @@ public class TestModBlocks {
             () -> new Block(BlockBehaviour.Properties.of(Material.DIRT)
                     .destroyTime(10)
                     .explosionResistance(1000000)
-                    .sound(TestSoundType.TEST_BLOCK_SOUND)));
+                    .sound(SoundType.AMETHYST)));
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register((eventBus));

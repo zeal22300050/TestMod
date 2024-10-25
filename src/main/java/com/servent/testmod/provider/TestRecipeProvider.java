@@ -8,6 +8,7 @@ import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Consumer;
 
@@ -17,7 +18,7 @@ public class TestRecipeProvider extends RecipeProvider{
     }
 
     @Override
-    protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
+    protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, TestModItems.TEST_BUTTON.get(), 3)
                 .requires(TestModBlocks.TEST_BLOCK.get())
                 .group("testitem")

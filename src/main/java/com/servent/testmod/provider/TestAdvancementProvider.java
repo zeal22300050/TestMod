@@ -17,6 +17,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.ForgeAdvancementProvider;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -30,7 +31,7 @@ public class TestAdvancementProvider extends ForgeAdvancementProvider {
     public static class TestAdvancementGenerator implements AdvancementGenerator {
 
         @Override
-        public void generate(HolderLookup.Provider registries, Consumer<Advancement> saver, ExistingFileHelper helper) {
+        public void generate(HolderLookup.@NotNull Provider registries, @NotNull Consumer<Advancement> saver, @NotNull ExistingFileHelper helper) {
             Advancement root = Advancement.Builder.advancement()
                     .display(new ItemStack(Blocks.TNT), Component.literal("TestMod"), Component.translatable("block.minecraft.tnt"), new ResourceLocation(TestMod.MOD_ID, "textures/block/test_block.png"), FrameType.TASK, true, false, true)
                     .addCriterion("has_tnt", InventoryChangeTrigger.TriggerInstance.hasItems(Blocks.TNT))

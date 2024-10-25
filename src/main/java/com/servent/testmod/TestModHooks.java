@@ -18,6 +18,8 @@ import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
+import java.util.Objects;
+
 @Mod.EventBusSubscriber(modid = TestMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class TestModHooks {
     @SubscribeEvent
@@ -50,7 +52,7 @@ public class TestModHooks {
     @SubscribeEvent
     public static void itemTossEvent(ItemTossEvent event) {
         if (event.getEntity().getItem().is(TestModItems.TEST_BUTTON.get()) && event.getPlayer() instanceof ServerPlayer serverPlayer) {
-            serverPlayer.getAdvancements().award(serverPlayer.getServer().getAdvancements().getAdvancement(new ResourceLocation(TestMod.MOD_ID, "test_button")), "toss_test_button");
+            serverPlayer.getAdvancements().award(Objects.requireNonNull(Objects.requireNonNull(serverPlayer.getServer()).getAdvancements().getAdvancement(new ResourceLocation(TestMod.MOD_ID, "test_button"))), "toss_test_button");
         }
         if (event.getEntity().getItem().is(TestItemTagsProvider.TOSS_EXPLOSIVE) && !event.getEntity().getLevel().isClientSide()) {
             event.getEntity().getLevel().explode(event.getPlayer(), event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), 1f, true, Level.ExplosionInteraction.TNT);
